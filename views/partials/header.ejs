@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
+    <title>Blog</title>
+</head>
+<header>
+    <p class="header-text"><%= post.user_name %></p>
+    <form class="search-container">
+        <input name="search" placeholder="Search by user or title">
+    </form>
+    <form class="user-button dropdown" id="user-form" method="post">
+        <button type="button">Users</button>
+        <div class="dropdown-content">
+            <a href="#" data-action="user/create">Create user</a>
+            <a href="#" data-action="user/change">Change user</a>
+            <a href="#" data-action="user/delete">Delete user</a>
+          </div>
+    </form>
+    <form class="post-button dropdown" id="post-form" method="post">
+        <button type="button">Posts</button>
+        <div class="dropdown-content">
+            <a href="#" data-action="post/create">Create post</a>
+            <a href="#" data-action="post/edit">Edit post</a>
+            <a href="#" data-action="post/delete">Delete post</a>
+          </div>
+    </form>
+</header>
+<main>

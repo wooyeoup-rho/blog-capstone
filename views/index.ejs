@@ -1,0 +1,30 @@
+<%- include('partials/header.ejs'); -%>
+<body>
+
+    <!-- <form class="tab-view tab-view-height-auto" action="/user" method="post">
+    
+            <input type="submit" name="add" value="new" id="tab">
+            <label for="tab">Add Family Member</label>
+    
+      </form> -->
+
+
+    <div class="container">
+        <div class="rectangle" id="left"></div>
+        <div class="pill">
+            <div class="pill-container">
+                <h1><%= post.post_title %></h1>
+                <p style="white-space: pre-line;"><%= post.post_text.length > 700 ? post.post_text.substring(0, 700) + "..." : post.post_text %></p>
+                <div class="author-container">
+                    <p class="author-text"><%= post.user_name %></p>
+                    <p class=""><%= post.formatted_date %></p>    
+                </div>
+            </div>
+        </div>
+        <div class="rectangle right" id="right"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="scripts/index.js"></script>
+
+<%- include('partials/footer.ejs'); -%>

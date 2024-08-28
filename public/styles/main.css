@@ -1,0 +1,209 @@
+html {
+    background-color: #e4e9fd;
+    background-image: -webkit-linear-gradient(70deg, #4F709C 50%, #F0F0F0 50%);
+    font-family: "helvetica neue";
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0;
+}
+
+/* HEADER */
+header {
+    display: grid;
+    height: 100px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 25px 50px 25px;
+    background-color: #213555;
+    padding: 0 4rem;
+}
+
+header * {
+    margin: 0;
+    padding: 0;
+}
+
+.header-text {
+    color: #F0F0F0;
+    font-family: "Sue Ellen Francisco", cursive;
+    font-weight: lighter;
+    text-shadow: 3px 0 #213555;
+    font-size: 2.5rem;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    grid-row-start: 1;
+    grid-row-end: span 3;
+}
+
+.search-container {
+    grid-column-start: 4;
+    grid-column-end: span 6;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+input {
+    font-family: "Cabin", sans-serif;
+    font-size: 1.5rem;
+    height: 50px;
+    width: 100%;
+
+    padding: 0 1rem;
+}
+
+.user-button {
+    grid-column-start: 11;
+    grid-row-start: 2;
+}
+
+.post-button {
+    grid-column-start: 12;
+    grid-row-start: 2;
+}
+
+button {
+    font-family: "Cabin", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #4F709C;
+    border: 2px #F0F0F0 solid;
+    padding: 15px 25px;
+    color: #F0F0F0;
+    font-size: 1rem;
+}
+
+button:active {
+    background: #344863;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content a:hover {background-color: #ddd;}
+  
+.dropdown:hover .dropdown-content {display: block;}
+  
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+/* MAIN */
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+    /* margin: 0 50px; */
+}
+
+.pill {
+    border-radius: 20px;
+    margin: 1rem;
+    padding: 1rem 4rem;
+    background-color: #213555;
+    border: 2rem #1d2f4d solid;
+    height: 60vh;
+    width: 60%;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.pill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 90%;
+    padding: 1rem;
+}
+
+.author-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.author-text {
+    font-weight: bold;
+}
+
+h1 {
+    font-family: "Cabin", sans-serif;
+    color: #F0F0F0;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+p {
+    font-family: "Cabin", sans-serif;
+    color: #F0F0F0;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.rectangle {
+    width: 40%;
+    height: 80%;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.right {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.rectangle-left {
+    background: radial-gradient(circle at 0% 50%, #213555, rgba(0, 0, 0, 0) 40%);
+}
+
+.rectangle-right {
+    background: radial-gradient(circle at 100% 50%, #213555, rgba(0, 0, 0, 0) 40%);
+}
+
+#left:hover {
+    background: radial-gradient(circle at 0% 50%, #213555, rgba(0, 0, 0, 0) 40%);
+}
+
+#right:hover {
+    background: radial-gradient(circle at 100% 50%, #213555, rgba(0, 0, 0, 0) 40%);
+}
+
+/* FOOTER */
+footer {
+    font-family: "Cabin", sans-serif;
+    font-weight: bold;
+    color: #F0F0F0;
+    text-align: center;
+    padding: 10px;
+}
