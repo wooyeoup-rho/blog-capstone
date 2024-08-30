@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/new.css" />
+    <title>Post</title>
+</head>
+<body>
+    <h1>Post Editor</h1>
+    <h2><%= author %></h2>
+    <% const formAction = typeof post !== 'undefined' ? `/${post.slug}/edit` : 'create'; %>
+    <form action= <%= formAction %> method="post">
+        <p>Title</p>
+        <input
+            type="text"
+            name="post_title"
+            maxlength="30"
+            spellcheck="false"
+            value="<%= typeof post !== 'undefined' ? post.post_title : '' %>"
+            placeholder="Enter title">
+
+        <p>Text</p>
+        <textarea
+            name="post_text"
+            rows="10"
+            columns="32"
+            spellcheck="false"
+            placeholder="Enter text"><%= typeof post !== 'undefined' ? post.post_text : '' %></textarea>
+
+        <div class="spacer"></div>
+
+        <button type="submit"><%= typeof post !== 'undefined' ? 'Save' : 'Create' %></button>
+    </form>
+</body>
+</html>

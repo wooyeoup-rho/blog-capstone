@@ -1,3 +1,6 @@
+const rectangles = document.getElementsByClassName("rectangle");
+const searchInput = document.querySelector('input[name="search"]');
+
 function animatePress(direction) {
     $("#" + direction).addClass("rectangle-" + direction);
 
@@ -7,9 +10,13 @@ function animatePress(direction) {
 };
 
 $(document).on("keydown", function(event) {
-    if (event.which === 37 || event.which === 65) { // Left arrow key
+    if (document.activeElement === searchInput) {
+        return;
+    }
+    
+    if (event.which === 37 || event.which === 65) {
         animatePress("left");
-    } else if (event.which === 39 || event.which === 68) { // Right arrow key
+    } else if (event.which === 39 || event.which === 68) {
         animatePress("right")
     }
 });
@@ -37,8 +44,6 @@ function nextPost(elementId = event.target.id) {
     });
 }
 
-const rectangles = document.getElementsByClassName("rectangle");
-
 for (let i = 0; i < rectangles.length; i++) {
     rectangles[i].addEventListener("click", function(event) {
         nextPost();
@@ -46,6 +51,12 @@ for (let i = 0; i < rectangles.length; i++) {
 }
 
 document.addEventListener('keydown', (event) => {
+    const searchInput = document.querySelector('input[name="search"]');
+    
+    if (document.activeElement === searchInput) {
+        return;
+    }
+
     switch (event.key) {
       case 'ArrowLeft':
       case 'a':
@@ -65,10 +76,9 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('user-form');
     
-    // Add click event listeners to dropdown links
     document.querySelectorAll('.dropdown-content a').forEach(link => {
         link.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default link behavior
+            event.preventDefault();
             const action = this.getAttribute('data-action');
             form.action = action;
             form.submit();

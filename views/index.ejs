@@ -1,21 +1,17 @@
 <%- include('partials/header.ejs'); -%>
 <body>
-
-    <!-- <form class="tab-view tab-view-height-auto" action="/user" method="post">
-    
-            <input type="submit" name="add" value="new" id="tab">
-            <label for="tab">Add Family Member</label>
-    
-      </form> -->
-
-
     <div class="container">
         <div class="rectangle" id="left"></div>
         <div class="pill">
             <div class="pill-container">
-                <h1><%= post.post_title %></h1>
-                <p style="white-space: pre-line;"><%= post.post_text.length > 700 ? post.post_text.substring(0, 700) + "..." : post.post_text %></p>
-                <div class="author-container">
+                <div class="row-container">
+                    <h1><%= post.post_title %></h1>
+                    <form action="/<%= post.slug %>" method="get">
+                        <button type="submit">Read More</button>
+                    </form>
+                </div>
+                <p style="white-space: pre-line;"><%= post.post_text.length > 600 ? post.post_text.substring(0, 600) + "..." : post.post_text %></p>
+                <div class="row-container">
                     <p class="author-text"><%= post.user_name %></p>
                     <p class=""><%= post.formatted_date %></p>    
                 </div>

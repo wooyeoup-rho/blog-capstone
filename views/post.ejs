@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/post.css" />
+    <title><%= post.title %></title>
+</head>
+<body>
+    <div class="button-container">
+        <form class="home"action="/" method="get">
+            <button type="submit">Home</button>
+        </form>
+    
+        <form class="edit" action="/<%= post.slug %>/edit" method="get">
+            <button type="submit">Edit</button>
+        </form>
+    
+        <form class="delete" action="/<%= post.slug %>/delete" method="post">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+
+    <div class="text-container">
+        <h1><%= post.post_title %></h1>
+        <div class="spacer"></div>
+        <p style="white-space: pre-line;"><%= post.post_text %></p>
+        <div class="spacer"></div>
+        <div class="row-container">
+            <p class="author-text"><%= post.user_name %></p>
+            <p class="author-text"><%= post.formatted_date %></p>
+        </div>
+    </div>
+    <!-- Add navigation back, comments, etc. -->
+</body>
+</html>

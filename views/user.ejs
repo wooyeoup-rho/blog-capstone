@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/user.css" />
+    <title>User</title>
+</head>
+<body>
+    <h1>User</h1>
+
+    <div class="row-container">
+        <div class="user-container">
+            <h2>New user</h2>
+            <form action="/user/create" method="post">
+                <input
+                    type="text"
+                    name="user_name"
+                    maxlength="50"
+                    spellcheck="false"
+                    placeholder="Enter username">
+                <div class="button-container">
+                    <button tpe="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    
+        <div class="user-container">
+            <h2>Existing user</h2>
+            <form action="/user/select" method="post">
+                <% users.forEach(function(user) { %>
+                    <input type="radio" id="user_id_<%= user.id %>" name="user_name" value="<%= user.name %>">
+                    <label for="user_id_<%= user.id %>"><%= user.name %></label><br>
+                <% }); %>
+                <div class="button-container">
+                    <button type="submit">Select</button>
+                </div>
+            </form>
+    </div>
+</html>

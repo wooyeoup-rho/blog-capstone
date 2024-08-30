@@ -10,25 +10,15 @@
     <title>Blog</title>
 </head>
 <header>
-    <p class="header-text"><%= post.user_name %></p>
-    <form class="search-container">
-        <input name="search" placeholder="Search by user or title">
+    <p class="header-text"><%= user %></p>
+    <form class="search-container" action="/search" method="post">
+        <input type="search" placeholder="Search by user or title">
     </form>
-    <form class="user-button dropdown" id="user-form" method="post">
-        <button type="button">Users</button>
-        <div class="dropdown-content">
-            <a href="#" data-action="user/create">Create user</a>
-            <a href="#" data-action="user/change">Change user</a>
-            <a href="#" data-action="user/delete">Delete user</a>
-          </div>
+    <form class="user-button" action="/user" method="get">
+        <button type="submit">Users</button>
     </form>
-    <form class="post-button dropdown" id="post-form" method="post">
-        <button type="button">Posts</button>
-        <div class="dropdown-content">
-            <a href="#" data-action="post/create">Create post</a>
-            <a href="#" data-action="post/edit">Edit post</a>
-            <a href="#" data-action="post/delete">Delete post</a>
-          </div>
+    <form class="post-button" action="/create" method="get">
+        <button type="submit">New post</button>
     </form>
 </header>
 <main>

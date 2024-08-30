@@ -12,6 +12,10 @@ body {
     margin: 0;
 }
 
+.spacer {
+    margin-bottom: 50px;
+}
+
 /* HEADER */
 header {
     display: grid;
@@ -34,7 +38,7 @@ header * {
     text-shadow: 3px 0 #213555;
     font-size: 2.5rem;
     grid-column-start: 1;
-    grid-column-end: span 2;
+    grid-column-end: span 3;
     grid-row-start: 1;
     grid-row-end: span 3;
 }
@@ -46,13 +50,19 @@ header * {
     grid-row-end: 2;
 }
 
-input {
+input[type="search"] {
     font-family: "Cabin", sans-serif;
     font-size: 1.5rem;
     height: 50px;
     width: 100%;
-
     padding: 0 1rem;
+}
+
+input[type="text"] {
+    font-family: "Cabin", sans-serif;
+    font-size: 1.5rem;
+    height: 50px;
+    width: 100%;
 }
 
 .user-button {
@@ -69,44 +79,17 @@ button {
     font-family: "Cabin", sans-serif;
     font-weight: bold;
     text-transform: uppercase;
-    background: #4F709C;
+    background: #344863;
     border: 2px #F0F0F0 solid;
     padding: 15px 25px;
     color: #F0F0F0;
     font-size: 1rem;
-}
-
-button:active {
-    background: #344863;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    width: 120px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 3;
-}
-  
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
     cursor: pointer;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
+button:active {
+    background: #253447;
 }
-  
-.dropdown-content a:hover {background-color: #ddd;}
-  
-.dropdown:hover .dropdown-content {display: block;}
-  
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 /* MAIN */
 
@@ -116,7 +99,6 @@ button:active {
     justify-content: space-between;
     align-items: center;
     height: 80vh;
-    /* margin: 0 50px; */
 }
 
 .pill {
@@ -138,16 +120,17 @@ button:active {
 .pill-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     height: 90%;
     padding: 1rem;
 }
 
-.author-container {
+.row-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
